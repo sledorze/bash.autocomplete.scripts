@@ -1,0 +1,13 @@
+# NME autocomplete
+_nme(){
+	local cur prev opts
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	opts="setup help update build run test document generate android flash html5 ios linux mac webos windows -debug -verbose -xml -java-externs -neko -64 -web -chrome -opera -simulator"
+	if [[ ${cur} == * ]] ; then
+		COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+		return 0
+	fi
+}
+complete -f -X '.[^./]*' -F _nme nme
