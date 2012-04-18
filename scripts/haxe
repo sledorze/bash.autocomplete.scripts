@@ -1,12 +1,12 @@
 
-# Haxe bash autocomplete
+# HaXe bash autocomplete
 
 _haxe(){
 	local cur prev opts
 	COMPREPLY=()
 	cur="${COMP_WORDS[COMP_CWORD]}"
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
-	opts="-js -swf -as3 -neko -php -cpp -xml -main -lib -D -v -debug -swf-version -swf-header -swf-lib -x -resource -prompt -cmd --flash-strict --no-traces --flash-use-stage --gen-hx-classes --next --display --no-output --times --no-inline --no-opt --php-front --php-lib --php-prefix --js-namespace --remap --interp --macro --dead-code-elimination -swf9 -help --help"
+	opts="-cp -js -swf -as3 -neko -php -cpp -cs -java -xml -main -lib -D -v -debug -swf-version -swf-header -swf-lib -x -resource -prompt -cmd --flash-strict --no-traces --flash-use-stage --gen-hx-classes --next --display --no-output --times --no-inline --no-opt --php-front --php-lib --php-prefix --js-namespace --remap --interp --macro --dead-code-elimination --wait --connect --cwd -swf9 -help --help"
 	if [[ ${cur} == -* ]] ; then
 		COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
 		return 0

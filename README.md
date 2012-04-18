@@ -1,7 +1,7 @@
 
 BASH.AUTOCOMPLETE
 =================
-Misc autocomplete scripts for bash.
+HaXe autocomplete scripts for bash.
 
 
 INSTALL
